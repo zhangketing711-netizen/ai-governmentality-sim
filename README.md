@@ -70,11 +70,3 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python src/ai_vs_human_entropy.py---
 
-## Limitations
-
-- This is a conceptual research prototype, not a production moderation system.
-- AI attribution is modeled via parameter differences.
-- Network and governance mechanisms are simplified abstractions.
-- Real-world platform infrastructures are significantly more complex.
-
-
