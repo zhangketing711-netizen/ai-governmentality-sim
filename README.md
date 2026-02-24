@@ -70,3 +70,31 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python src/ai_vs_human_entropy.py---
 
+Structural Break Design (Human → AI Regime Shift)
+
+To align the simulation with an interrupted time-series logic, the model includes a structural break experiment that simulates the diffusion of generative AI after a temporal threshold.
+
+The experiment introduces a regime shift at a predefined time step:
+	•	For t < break_t: Human production regime
+	•	For t ≥ break_t: AI-assisted production regime
+
+The regime shift modifies:
+	•	Production rate
+	•	Diffusion probability
+	•	Category mutation rate
+
+This allows the model to approximate a post-2023 AI diffusion scenario in which generative systems alter the scale and diversification dynamics of discourse production.
+
+The structural break experiment is implemented in:
+
+src/structural_break.py
+
+Outputs include:
+	•	results/structural_break_timeseries.csv
+	•	figures/structural_break_infected.png
+	•	figures/structural_break_entropy.png
+
+The vertical dashed line in the plots marks the regime transition point.
+
+This design provides a computational analogue to segmented regression approaches used in interrupted time-series analysis, allowing visual inspection of slope changes and diversification shifts following AI adoption.
+
